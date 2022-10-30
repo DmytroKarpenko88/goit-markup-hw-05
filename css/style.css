@@ -140,8 +140,7 @@ button {
   letter-spacing: 0.02em;
 }
 
-.links-nav a,
-.projects a {
+.links-nav a {
   color: var(--main-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -177,7 +176,7 @@ a.current::after {
 
 .header-contacts a {
   color: var(--additional-text-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: currentColor;
 }
 
@@ -186,7 +185,6 @@ a.current::after {
 .header-contacts a:hover,
 .header-contacts a:focus {
   color: var(--btn-color);
-  fill: var(--btn-color);
 }
 
 .header-contacts {
@@ -305,9 +303,10 @@ a.current::after {
   bottom: 0;
   background-color: var(--capture-bg-color);
 
-  padding: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  text-align: center;
   text-transform: uppercase;
 
   color: #ffffff;
@@ -465,9 +464,14 @@ a.current::after {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.projects a {
+  color: var(--main-text-color);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
 .projects .projects-link:hover,
 .projects .projects-link:focus {
-  display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -494,7 +498,8 @@ a.current::after {
   color: var(--secondary-text-color);
 }
 
-.box:hover .overlay {
+.projects-link:hover .overlay,
+.projects-link:focus .overlay {
   transform: translateX(0);
 }
 
@@ -560,6 +565,7 @@ a.current::after {
 }
 
 .footer-title {
+  font-weight: 700;
   line-height: calc(16 / 14);
   text-transform: uppercase;
   color: var(--secondary-text-color);
